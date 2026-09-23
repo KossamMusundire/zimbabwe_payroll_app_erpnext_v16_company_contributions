@@ -1,17 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "zimbabwe_payroll"
-authors = [
-    { name = "CyteERP Systems" },
-]
+version = "1.0.0"
 description = "Zimbabwe payroll statutory calculations and reports for ERPNext"
-requires-python = ">=3.10"
 readme = "README.md"
-dynamic = ["version"]
+requires-python = ">=3.10"
 dependencies = []
 
-[build-system]
-requires = ["flit_core >=3.4,<4"]
-build-backend = "flit_core.buildapi"
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["."]
 
 [tool.bench.frappe-dependencies]
 frappe = ">=16.0.0,<17.0.0"
@@ -20,3 +23,4 @@ erpnext = ">=16.0.0,<17.0.0"
 [tool.ruff]
 line-length = 110
 target-version = "py310"
+
